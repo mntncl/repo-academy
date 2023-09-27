@@ -81,4 +81,25 @@ table 50100 Student
         }
     }
 
+    trigger OnInsert()
+    begin
+        TestField(Code); // Controlla se il campo in questione sia vuoto o meno
+        if Rec.Graduated then
+            Rec."Average Rating" := 100;
+    end;
+
+    trigger OnModify()
+    begin
+
+    end;
+
+    trigger OnRename()
+    begin
+
+    end;
+
+    trigger OnDelete()
+    begin
+
+    end;
 }
